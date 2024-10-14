@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Card, CardContent, Grid, Typography, Button, Grid2 } from "@mui/material";
+import { Card, CardContent, Typography, Button, Grid2 } from "@mui/material";
 
 const MyCourses = ({ subscribedCourses, onUnsubscribe }) => {
   const [myCourses, setMyCourses] = useState([]);

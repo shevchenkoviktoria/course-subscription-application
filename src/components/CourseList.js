@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Button, Card, CardContent, Grid, Typography } from "@mui/material";
+import { Button, Card, CardContent, Grid2, Typography } from "@mui/material";
 
 const CourseList = ({ onSubscribe }) => {
   const [courses, setCourses] = useState([]);
@@ -14,9 +14,9 @@ const CourseList = ({ onSubscribe }) => {
   }, []);
 
   return (
-    <Grid container spacing={3}>
+    <Grid2 container spacing={3}>
       {courses.map((course) => (
-        <Grid item xs={12} sm={6} md={4} key={course.id}>
+        <Grid2 item xs={12} sm={6} md={4} key={course.id}>
           <Card>
             <CardContent>
               <Typography variant="h5">{course.title}</Typography>
@@ -25,15 +25,15 @@ const CourseList = ({ onSubscribe }) => {
               <Button
                 variant="contained"
                 onClick={() => onSubscribe(course.id)}
-                style={{ marginTop: "16px" }}
+                sx={{ marginTop: "16px" }}
               >
                 Subscribe
               </Button>
             </CardContent>
           </Card>
-        </Grid>
+        </Grid2>
       ))}
-    </Grid>
+    </Grid2>
   );
 };
 

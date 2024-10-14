@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import { Button, Card, CardContent, Grid, Typography } from '@mui/material';
+import React, { useEffect, useState } from "react";
+import { Button, Card, CardContent, Grid, Typography } from "@mui/material";
 
 const CourseList = ({ onSubscribe }) => {
   const [courses, setCourses] = useState([]);
 
   useEffect(() => {
     const fetchCourses = async () => {
-      const response = await fetch('http://localhost:5000/api/courses');
+      const response = await fetch("http://localhost:5000/api/courses");
       const data = await response.json();
       setCourses(data);
     };
@@ -15,7 +15,7 @@ const CourseList = ({ onSubscribe }) => {
 
   return (
     <Grid container spacing={3}>
-      {courses.map(course => (
+      {courses.map((course) => (
         <Grid item xs={12} sm={6} md={4} key={course.id}>
           <Card>
             <CardContent>
@@ -25,7 +25,7 @@ const CourseList = ({ onSubscribe }) => {
               <Button
                 variant="contained"
                 onClick={() => onSubscribe(course.id)}
-                style={{ marginTop: '16px' }}
+                style={{ marginTop: "16px" }}
               >
                 Subscribe
               </Button>
